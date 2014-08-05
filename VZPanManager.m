@@ -10,7 +10,7 @@
 #import "VZIntarnalPanView.h"
 
 
-@interface VZPanManager () <UIScrollViewDelegate, VZIntarnalPanViewDelegate>
+@interface VZPanManager () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) VZIntarnalPanView *internalPanView;
@@ -53,10 +53,13 @@
             frame.origin.y = self.offsetY;
             frame;
         });
-        self.internalPanView.delegate = self;
+        self.internalPanView.scrollView = self.scrollView;
         [self.internalPanView  addSubview:self.panView];
         [self.scrollView addSubview:self.internalPanView];
-    }
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedPan:)];
+        [self.internalPanView addGestureRecognizer:tap];
+     }
     
 }
 
@@ -66,7 +69,8 @@
         
         self.presentingViewController.view.frame = ({
             CGRect frame = self.presentingViewController.view.frame;
-            frame.origin.x = self.presentedViewController.view.frame.size.width;
+            frame.size.width = [self maxWidth];
+            frame.origin.x = self.presentedViewController.view.frame.size.width + (_presentingViewController.view.frame.size.width - frame.size.width) / 2;
             frame;
         });
         
@@ -76,26 +80,53 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     scrollView.scrollEnabled = scrollView.contentOffset.x > 0;
+    [self updateBackColorAlpha];
 }
 
+
+#pragma mark - Asctions -
+
+- (void)updateBackColorAlpha {
+    float persent = self.scrollView.contentOffset.x / _scrollView.frame.size.width + 2 * (self.scrollView.contentOffset.x > _scrollView.frame.size.width) * (1 - _scrollView.contentOffset.x / _scrollView.frame.size.width);
+    persent = MIN(0.8, persent);
+    persent = MAX(0, persent);
+    self.scrollView.backgroundColor = [UIColor colorWithWhite:0 alpha:persent];
+}
+
+- (void)tapedPan:(UITapGestureRecognizer *)tap {
+    if (tap.state == UIGestureRecognizerStateRecognized) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width, 0) animated:YES];
+    }
+}
 
 #pragma mark - VZPanInternalDelegate -
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.scrollView touchesMoved:touches withEvent:event];
-}
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"moved");
+//    self.scrollView.scrollEnabled = YES;
+//    [self.scrollView touchesMoved:touches withEvent:event];
+//}
+//
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"began");
+//    self.scrollView.scrollEnabled = YES;
+//    [self.scrollView touchesBegan:touches withEvent:event];
+//}
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"ended");
+//    [self.scrollView touchesEnded:touches withEvent:event];
+//}
+//
+//- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [self.scrollView touchesCancelled:touches withEvent:event];
+//}
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.scrollView.scrollEnabled = YES;
-    [self.scrollView touchesBegan:touches withEvent:event];
-}
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.scrollView touchesEnded:touches withEvent:event];
-}
+#pragma mark - Helpers -
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.scrollView touchesCancelled:touches withEvent:event];
+- (CGFloat)maxWidth {
+    return 300;
 }
 
 

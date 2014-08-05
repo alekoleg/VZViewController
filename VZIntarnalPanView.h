@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol VZIntarnalPanViewDelegate <NSObject>
-
-@optional
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-
-@end
 
 @interface VZIntarnalPanView : UIView
 
-@property (nonatomic, weak) id <VZIntarnalPanViewDelegate> delegate;
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 @end

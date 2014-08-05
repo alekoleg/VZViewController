@@ -10,30 +10,13 @@
 
 @implementation VZIntarnalPanView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *view = [super hitTest:point withEvent:event];
+    if (view == self || view.superview == self) {
+        self.scrollView.scrollEnabled = YES;
+        return self.scrollView;
     }
-    return self;
-}
-
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.delegate touchesBegan:touches withEvent:event];
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event  {
-    [self.delegate touchesCancelled:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.delegate touchesEnded:touches withEvent:event];
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.delegate touchesMoved:touches withEvent:event];
+    return view;
 }
 
 
