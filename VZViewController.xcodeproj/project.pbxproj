@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3FD8AE31990E6EE006E87DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE21990E6EE006E87DA /* Foundation.framework */; };
+		B3FD8AE51990E6EE006E87DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE41990E6EE006E87DA /* CoreGraphics.framework */; };
+		B3FD8AE71990E6EE006E87DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE61990E6EE006E87DA /* UIKit.framework */; };
+		B3FD8AED1990E6EF006E87DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FD8AEB1990E6EF006E87DA /* InfoPlist.strings */; };
+		B3FD8AEF1990E6EF006E87DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8AEE1990E6EF006E87DA /* main.m */; };
+		B3FD8AF31990E6EF006E87DA /* VZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8AF21990E6EF006E87DA /* VZAppDelegate.m */; };
+		B3FD8AF61990E6EF006E87DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FD8AF41990E6EF006E87DA /* Main.storyboard */; };
+		B3FD8AF91990E6EF006E87DA /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8AF81990E6EF006E87DA /* VZViewController.m */; };
+		B3FD8AFB1990E6EF006E87DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FD8AFA1990E6EF006E87DA /* Images.xcassets */; };
+		B3FD8B021990E6EF006E87DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8B011990E6EF006E87DA /* XCTest.framework */; };
+		B3FD8B031990E6EF006E87DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE21990E6EE006E87DA /* Foundation.framework */; };
+		B3FD8B041990E6EF006E87DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE61990E6EE006E87DA /* UIKit.framework */; };
+		B3FD8B0C1990E6EF006E87DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FD8B0A1990E6EF006E87DA /* InfoPlist.strings */; };
+		B3FD8B0E1990E6EF006E87DA /* VZViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8B0D1990E6EF006E87DA /* VZViewControllerTests.m */; };
+		B3FD8B1A1990F57E006E87DA /* UIViewController+VZViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8B191990F57E006E87DA /* UIViewController+VZViewControler.m */; };
+		B3FD8B1D19910560006E87DA /* VZPanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8B1C19910560006E87DA /* VZPanManager.m */; };
+		B3FD8B2019910A20006E87DA /* VZIntarnalPanView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FD8B1F19910A20006E87DA /* VZIntarnalPanView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3FD8B051990E6EF006E87DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FD8AD71990E6EE006E87DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3FD8ADE1990E6EE006E87DA;
+			remoteInfo = VZViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B3FD8ADF1990E6EE006E87DA /* VZViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VZViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FD8AE21990E6EE006E87DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3FD8AE41990E6EE006E87DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3FD8AE61990E6EE006E87DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3FD8AEA1990E6EE006E87DA /* VZViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VZViewController-Info.plist"; sourceTree = "<group>"; };
+		B3FD8AEC1990E6EF006E87DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3FD8AEE1990E6EF006E87DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3FD8AF01990E6EF006E87DA /* VZViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VZViewController-Prefix.pch"; sourceTree = "<group>"; };
+		B3FD8AF11990E6EF006E87DA /* VZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZAppDelegate.h; sourceTree = "<group>"; };
+		B3FD8AF21990E6EF006E87DA /* VZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZAppDelegate.m; sourceTree = "<group>"; };
+		B3FD8AF51990E6EF006E87DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3FD8AF71990E6EF006E87DA /* VZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZViewController.h; sourceTree = "<group>"; };
+		B3FD8AF81990E6EF006E87DA /* VZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZViewController.m; sourceTree = "<group>"; };
+		B3FD8AFA1990E6EF006E87DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B3FD8B001990E6EF006E87DA /* VZViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VZViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FD8B011990E6EF006E87DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B3FD8B091990E6EF006E87DA /* VZViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VZViewControllerTests-Info.plist"; sourceTree = "<group>"; };
+		B3FD8B0B1990E6EF006E87DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3FD8B0D1990E6EF006E87DA /* VZViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZViewControllerTests.m; sourceTree = "<group>"; };
+		B3FD8B181990F57E006E87DA /* UIViewController+VZViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VZViewControler.h"; sourceTree = "<group>"; };
+		B3FD8B191990F57E006E87DA /* UIViewController+VZViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VZViewControler.m"; sourceTree = "<group>"; };
+		B3FD8B1B19910560006E87DA /* VZPanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPanManager.h; sourceTree = "<group>"; };
+		B3FD8B1C19910560006E87DA /* VZPanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPanManager.m; sourceTree = "<group>"; };
+		B3FD8B1E19910A20006E87DA /* VZIntarnalPanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZIntarnalPanView.h; sourceTree = "<group>"; };
+		B3FD8B1F19910A20006E87DA /* VZIntarnalPanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZIntarnalPanView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3FD8ADC1990E6EE006E87DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8AE51990E6EE006E87DA /* CoreGraphics.framework in Frameworks */,
+				B3FD8AE71990E6EE006E87DA /* UIKit.framework in Frameworks */,
+				B3FD8AE31990E6EE006E87DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FD8AFD1990E6EF006E87DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8B021990E6EF006E87DA /* XCTest.framework in Frameworks */,
+				B3FD8B041990E6EF006E87DA /* UIKit.framework in Frameworks */,
+				B3FD8B031990E6EF006E87DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3FD8AD61990E6EE006E87DA = {
+			isa = PBXGroup;
+			children = (
+				B3FD8B181990F57E006E87DA /* UIViewController+VZViewControler.h */,
+				B3FD8B191990F57E006E87DA /* UIViewController+VZViewControler.m */,
+				B3FD8B1B19910560006E87DA /* VZPanManager.h */,
+				B3FD8B1C19910560006E87DA /* VZPanManager.m */,
+				B3FD8B1E19910A20006E87DA /* VZIntarnalPanView.h */,
+				B3FD8B1F19910A20006E87DA /* VZIntarnalPanView.m */,
+				B3FD8AE81990E6EE006E87DA /* VZViewController */,
+				B3FD8B071990E6EF006E87DA /* VZViewControllerTests */,
+				B3FD8AE11990E6EE006E87DA /* Frameworks */,
+				B3FD8AE01990E6EE006E87DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3FD8AE01990E6EE006E87DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8ADF1990E6EE006E87DA /* VZViewController.app */,
+				B3FD8B001990E6EF006E87DA /* VZViewControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3FD8AE11990E6EE006E87DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8AE21990E6EE006E87DA /* Foundation.framework */,
+				B3FD8AE41990E6EE006E87DA /* CoreGraphics.framework */,
+				B3FD8AE61990E6EE006E87DA /* UIKit.framework */,
+				B3FD8B011990E6EF006E87DA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3FD8AE81990E6EE006E87DA /* VZViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8AF11990E6EF006E87DA /* VZAppDelegate.h */,
+				B3FD8AF21990E6EF006E87DA /* VZAppDelegate.m */,
+				B3FD8AF41990E6EF006E87DA /* Main.storyboard */,
+				B3FD8AF71990E6EF006E87DA /* VZViewController.h */,
+				B3FD8AF81990E6EF006E87DA /* VZViewController.m */,
+				B3FD8AFA1990E6EF006E87DA /* Images.xcassets */,
+				B3FD8AE91990E6EE006E87DA /* Supporting Files */,
+			);
+			path = VZViewController;
+			sourceTree = "<group>";
+		};
+		B3FD8AE91990E6EE006E87DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8AEA1990E6EE006E87DA /* VZViewController-Info.plist */,
+				B3FD8AEB1990E6EF006E87DA /* InfoPlist.strings */,
+				B3FD8AEE1990E6EF006E87DA /* main.m */,
+				B3FD8AF01990E6EF006E87DA /* VZViewController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3FD8B071990E6EF006E87DA /* VZViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8B0D1990E6EF006E87DA /* VZViewControllerTests.m */,
+				B3FD8B081990E6EF006E87DA /* Supporting Files */,
+			);
+			path = VZViewControllerTests;
+			sourceTree = "<group>";
+		};
+		B3FD8B081990E6EF006E87DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3FD8B091990E6EF006E87DA /* VZViewControllerTests-Info.plist */,
+				B3FD8B0A1990E6EF006E87DA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3FD8ADE1990E6EE006E87DA /* VZViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FD8B111990E6EF006E87DA /* Build configuration list for PBXNativeTarget "VZViewController" */;
+			buildPhases = (
+				B3FD8ADB1990E6EE006E87DA /* Sources */,
+				B3FD8ADC1990E6EE006E87DA /* Frameworks */,
+				B3FD8ADD1990E6EE006E87DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VZViewController;
+			productName = VZViewController;
+			productReference = B3FD8ADF1990E6EE006E87DA /* VZViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3FD8AFF1990E6EF006E87DA /* VZViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FD8B141990E6EF006E87DA /* Build configuration list for PBXNativeTarget "VZViewControllerTests" */;
+			buildPhases = (
+				B3FD8AFC1990E6EF006E87DA /* Sources */,
+				B3FD8AFD1990E6EF006E87DA /* Frameworks */,
+				B3FD8AFE1990E6EF006E87DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3FD8B061990E6EF006E87DA /* PBXTargetDependency */,
+			);
+			name = VZViewControllerTests;
+			productName = VZViewControllerTests;
+			productReference = B3FD8B001990E6EF006E87DA /* VZViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3FD8AD71990E6EE006E87DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = alekoleg;
+				TargetAttributes = {
+					B3FD8AFF1990E6EF006E87DA = {
+						TestTargetID = B3FD8ADE1990E6EE006E87DA;
+					};
+				};
+			};
+			buildConfigurationList = B3FD8ADA1990E6EE006E87DA /* Build configuration list for PBXProject "VZViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3FD8AD61990E6EE006E87DA;
+			productRefGroup = B3FD8AE01990E6EE006E87DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3FD8ADE1990E6EE006E87DA /* VZViewController */,
+				B3FD8AFF1990E6EF006E87DA /* VZViewControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3FD8ADD1990E6EE006E87DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8AFB1990E6EF006E87DA /* Images.xcassets in Resources */,
+				B3FD8AED1990E6EF006E87DA /* InfoPlist.strings in Resources */,
+				B3FD8AF61990E6EF006E87DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FD8AFE1990E6EF006E87DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8B0C1990E6EF006E87DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3FD8ADB1990E6EE006E87DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8B1D19910560006E87DA /* VZPanManager.m in Sources */,
+				B3FD8B1A1990F57E006E87DA /* UIViewController+VZViewControler.m in Sources */,
+				B3FD8AF91990E6EF006E87DA /* VZViewController.m in Sources */,
+				B3FD8B2019910A20006E87DA /* VZIntarnalPanView.m in Sources */,
+				B3FD8AF31990E6EF006E87DA /* VZAppDelegate.m in Sources */,
+				B3FD8AEF1990E6EF006E87DA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FD8AFC1990E6EF006E87DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FD8B0E1990E6EF006E87DA /* VZViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3FD8B061990E6EF006E87DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3FD8ADE1990E6EE006E87DA /* VZViewController */;
+			targetProxy = B3FD8B051990E6EF006E87DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3FD8AEB1990E6EF006E87DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FD8AEC1990E6EF006E87DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3FD8AF41990E6EF006E87DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FD8AF51990E6EF006E87DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3FD8B0A1990E6EF006E87DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FD8B0B1990E6EF006E87DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3FD8B0F1990E6EF006E87DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B3FD8B101990E6EF006E87DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3FD8B121990E6EF006E87DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
+				INFOPLIST_FILE = "VZViewController/VZViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B3FD8B131990E6EF006E87DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
+				INFOPLIST_FILE = "VZViewController/VZViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B3FD8B151990E6EF006E87DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VZViewController.app/VZViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VZViewControllerTests/VZViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B3FD8B161990E6EF006E87DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VZViewController.app/VZViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
+				INFOPLIST_FILE = "VZViewControllerTests/VZViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3FD8ADA1990E6EE006E87DA /* Build configuration list for PBXProject "VZViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FD8B0F1990E6EF006E87DA /* Debug */,
+				B3FD8B101990E6EF006E87DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FD8B111990E6EF006E87DA /* Build configuration list for PBXNativeTarget "VZViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FD8B121990E6EF006E87DA /* Debug */,
+				B3FD8B131990E6EF006E87DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3FD8B141990E6EF006E87DA /* Build configuration list for PBXNativeTarget "VZViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FD8B151990E6EF006E87DA /* Debug */,
+				B3FD8B161990E6EF006E87DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3FD8AD71990E6EE006E87DA /* Project object */;
+}
