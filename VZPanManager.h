@@ -15,6 +15,9 @@
 @property (nonatomic, strong) UIViewController *presentedViewController;
 @property (nonatomic) CGFloat offsetY;
 
+/**
+ *   Creation and layout all subviews
+ */
 - (void)setupViews;
 
 @end

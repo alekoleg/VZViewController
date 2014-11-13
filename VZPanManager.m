@@ -10,7 +10,9 @@
 #import "VZIntarnalPanView.h"
 
 
-@interface VZPanManager () <UIScrollViewDelegate>
+@interface VZPanManager () <UIScrollViewDelegate> {
+    BOOL _canReEnablePan;
+}
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) VZIntarnalPanView *internalPanView;
@@ -81,10 +83,23 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     scrollView.scrollEnabled = scrollView.contentOffset.x > 0;
     [self updateBackColorAlpha];
+    [self updateReEnable];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    _canReEnablePan = !decelerate;
+}
 
-#pragma mark - Asctions -
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    _canReEnablePan = YES;
+    [self updateReEnable];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _canReEnablePan = NO;
+}
+
+#pragma mark - Actions -
 
 - (void)updateBackColorAlpha {
     float persent = self.scrollView.contentOffset.x / _scrollView.frame.size.width + 2 * (self.scrollView.contentOffset.x > _scrollView.frame.size.width) * (1 - _scrollView.contentOffset.x / _scrollView.frame.size.width);
@@ -99,29 +114,20 @@
     }
 }
 
-#pragma mark - VZPanInternalDelegate -
+- (void)updateReEnable {
+    if (self.scrollView.contentOffset.x >= self.scrollView.frame.size.width * 2 && _canReEnablePan) {
+        _canReEnablePan = NO;
+        [self reEnable];
+    }
+}
 
-//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"moved");
-//    self.scrollView.scrollEnabled = YES;
-//    [self.scrollView touchesMoved:touches withEvent:event];
-//}
-//
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"began");
-//    self.scrollView.scrollEnabled = YES;
-//    [self.scrollView touchesBegan:touches withEvent:event];
-//}
-//
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"ended");
-//    [self.scrollView touchesEnded:touches withEvent:event];
-//}
-//
-//- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-//    [self.scrollView touchesCancelled:touches withEvent:event];
-//}
-
+- (void)reEnable {
+    self.scrollView.alpha = 0.0;
+    self.scrollView.contentOffset = CGPointZero;
+    [UIView animateWithDuration:0.3 delay:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.scrollView.alpha = 1.0;
+    } completion:NULL];
+}
 
 #pragma mark - Helpers -
 
