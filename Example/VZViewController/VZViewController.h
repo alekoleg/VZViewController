@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+VZViewControler.h"
-#import "VZPanManager.h"
+#import "VZPanViewController.h"
 
 
 @interface VZViewController : UIViewController

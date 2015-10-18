@@ -6,55 +6,67 @@
 //  Copyright (c) 2014 alekoleg. All rights reserved.
 //
 
-#import "VZPanManager.h"
+#import "VZPanViewController.h"
 #import "VZIntarnalPanView.h"
+#import "VZPassTouchView.h"
 
 
-@interface VZPanManager () <UIScrollViewDelegate> {
+@interface VZPanViewController () <UIScrollViewDelegate> {
     BOOL _canReEnablePan;
 }
 
+@property (nonatomic, assign) BOOL panningVCVisible;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) VZIntarnalPanView *internalPanView;
 
 @end
 
 
-@implementation VZPanManager
+@implementation VZPanViewController
 
-- (void)setupViews {
-    if (self.presentedViewController && self.presentingViewController) {
-        [self setupScrollView];
-        [self setupPanView];
-        [self setupViewControllers];
-    }
+- (instancetype)initWithPannigController:(UIViewController *)viewController
+{
+	if (self = [super init])
+	{
+		_panningViewController = viewController;
+	}
+	return self;
+}
+
+- (void)loadView
+{
+	self.view = [[VZPassTouchView alloc] init];
+}
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	[self setupScrollView];
+	[self setupPanView];
+	[self setupPanningViewController];
+
+	self.view.backgroundColor = [UIColor yellowColor];
+	self.scrollView.backgroundColor = [UIColor blueColor];
+	
 }
 
 #pragma mark - Setup -
 
 - (void)setupScrollView {
-    if (!self.scrollView && self.presentedViewController) {
-        self.scrollView = [[UIScrollView alloc] initWithFrame:self.presentedViewController.view.bounds];
+    if (!self.scrollView) {
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
         self.scrollView.backgroundColor = [UIColor clearColor];
+		self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.scrollView.delegate = self;
         self.scrollView.scrollEnabled = NO;
         self.scrollView.pagingEnabled = YES;
-        [self.presentedViewController.view addSubview:self.scrollView];
+        [self.view addSubview:self.scrollView];
     }
-    
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 3, self.scrollView.contentSize.height);
-    [self.presentedViewController.view bringSubviewToFront:self.scrollView];
 }
 
 - (void)setupPanView {
     if (!self.internalPanView && self.panView) {
         self.internalPanView = [[VZIntarnalPanView alloc] initWithFrame:self.panView.bounds];
-        self.internalPanView.frame = ({
-            CGRect frame = self.internalPanView.frame;
-            frame.origin.x = self.presentedViewController.view.frame.size.width - frame.size.width;
-            frame.origin.y = self.offsetY;
-            frame;
-        });
         self.internalPanView.scrollView = self.scrollView;
         [self.internalPanView  addSubview:self.panView];
         [self.scrollView addSubview:self.internalPanView];
@@ -65,23 +77,17 @@
     
 }
 
-- (void)setupViewControllers {
-    if (![self.presentedViewController.childViewControllers containsObject:self.presentingViewController]) {
-        [self.presentedViewController addChildViewController:self.presentingViewController];
-        
-        self.presentingViewController.view.frame = ({
-            CGRect frame = self.presentingViewController.view.frame;
-            frame.size.width = [self maxWidth];
-            frame.origin.x = self.presentedViewController.view.frame.size.width + (_presentingViewController.view.frame.size.width - frame.size.width) / 2;
-            frame;
-        });
-        
-        [self.scrollView addSubview:self.presentingViewController.view];
-    }
+- (void)setupPanningViewController {
+
+	[self addChildViewController:self.panningViewController];
+	[self.scrollView addSubview:self.panningViewController.view];
 }
+
+#pragma mark - UIScrollViewDelegate -
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     scrollView.scrollEnabled = scrollView.contentOffset.x > 0;
+	self.panningVCVisible = scrollView.contentOffset.x >= scrollView.frame.size.width / 2.0;
     [self updateBackColorAlpha];
     [self updateReEnable];
 }
@@ -100,6 +106,32 @@
 }
 
 #pragma mark - Actions -
+
+- (void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
+
+	self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 3, self.scrollView.contentSize.height);
+
+	self.panningViewController.view.frame = ({
+		CGRect frame = self.panningViewController.view.frame;
+		frame.size.width = [self maxWidth];
+		frame.origin.x = self.scrollView.frame.size.width + (self.scrollView.frame.size.width - frame.size.width) / 2.0;
+		frame.origin.y = 0.0;
+		frame.size.height = self.scrollView.frame.size.height;
+		frame;
+	});
+
+	self.internalPanView.frame = ({
+		CGRect frame = self.internalPanView.frame;
+		frame.origin.x = self.scrollView.frame.size.width - frame.size.width;
+		frame.origin.y = self.panViewOffsetY;
+		frame;
+	});
+
+	CGFloat offsetX = (self.panningVCVisible) ? self.scrollView.frame.size.width : 0.0;
+	self.scrollView.contentOffset = CGPointMake(offsetX, 0.0);
+}
 
 - (void)updateBackColorAlpha {
     float persent = self.scrollView.contentOffset.x / _scrollView.frame.size.width + 2 * (self.scrollView.contentOffset.x > _scrollView.frame.size.width) * (1 - _scrollView.contentOffset.x / _scrollView.frame.size.width);
@@ -132,7 +164,7 @@
 #pragma mark - Helpers -
 
 - (CGFloat)maxWidth {
-    return 300;
+    return self.view.frame.size.width * 0.9;
 }
 
 

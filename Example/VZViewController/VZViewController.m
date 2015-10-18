@@ -24,13 +24,16 @@
     
     UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"navVC"];
 
-    VZPanManager *manager = [VZPanManager new];
-    manager.panView = pan;
-    manager.offsetY = 70;
-    manager.presentingViewController = nav;
-    self.vz_panManager = manager;
+	VZPanViewController *panVC = [[VZPanViewController alloc] initWithPannigController:nav];
+    panVC.panView = pan;
+    panVC.panViewOffsetY = 70;
+
+
     
-    [self.vz_panManager setupViews];
+	[self addChildViewController:panVC];
+	[self.view addSubview:panVC.view];
+	panVC.view.frame = self.view.bounds;
+	panVC.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3947DD71AB2D9D900777629 /* UIViewController+VZViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD21AB2D9D900777629 /* UIViewController+VZViewControler.m */; };
+		B38B33771BD402A000F9C8C8 /* VZPassTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */; settings = {ASSET_TAGS = (); }; };
 		B3947DD81AB2D9D900777629 /* VZIntarnalPanView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD41AB2D9D900777629 /* VZIntarnalPanView.m */; };
-		B3947DD91AB2D9D900777629 /* VZPanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD61AB2D9D900777629 /* VZPanManager.m */; };
+		B3947DD91AB2D9D900777629 /* VZPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD61AB2D9D900777629 /* VZPanViewController.m */; };
 		B3FD8AE31990E6EE006E87DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE21990E6EE006E87DA /* Foundation.framework */; };
 		B3FD8AE51990E6EE006E87DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE41990E6EE006E87DA /* CoreGraphics.framework */; };
 		B3FD8AE71990E6EE006E87DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE61990E6EE006E87DA /* UIKit.framework */; };
@@ -37,12 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3947DD11AB2D9D900777629 /* UIViewController+VZViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VZViewControler.h"; sourceTree = "<group>"; };
-		B3947DD21AB2D9D900777629 /* UIViewController+VZViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VZViewControler.m"; sourceTree = "<group>"; };
+		B38B33751BD402A000F9C8C8 /* VZPassTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPassTouchView.h; sourceTree = "<group>"; };
+		B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPassTouchView.m; sourceTree = "<group>"; };
 		B3947DD31AB2D9D900777629 /* VZIntarnalPanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZIntarnalPanView.h; sourceTree = "<group>"; };
 		B3947DD41AB2D9D900777629 /* VZIntarnalPanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZIntarnalPanView.m; sourceTree = "<group>"; };
-		B3947DD51AB2D9D900777629 /* VZPanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPanManager.h; sourceTree = "<group>"; };
-		B3947DD61AB2D9D900777629 /* VZPanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPanManager.m; sourceTree = "<group>"; };
+		B3947DD51AB2D9D900777629 /* VZPanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPanViewController.h; sourceTree = "<group>"; };
+		B3947DD61AB2D9D900777629 /* VZPanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPanViewController.m; sourceTree = "<group>"; };
 		B3FD8ADF1990E6EE006E87DA /* VZViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VZViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FD8AE21990E6EE006E87DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3FD8AE41990E6EE006E87DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,12 +91,12 @@
 		B3947DD01AB2D9D900777629 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B3947DD11AB2D9D900777629 /* UIViewController+VZViewControler.h */,
-				B3947DD21AB2D9D900777629 /* UIViewController+VZViewControler.m */,
 				B3947DD31AB2D9D900777629 /* VZIntarnalPanView.h */,
 				B3947DD41AB2D9D900777629 /* VZIntarnalPanView.m */,
-				B3947DD51AB2D9D900777629 /* VZPanManager.h */,
-				B3947DD61AB2D9D900777629 /* VZPanManager.m */,
+				B3947DD51AB2D9D900777629 /* VZPanViewController.h */,
+				B3947DD61AB2D9D900777629 /* VZPanViewController.m */,
+				B38B33751BD402A000F9C8C8 /* VZPassTouchView.h */,
+				B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -274,10 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3947DD71AB2D9D900777629 /* UIViewController+VZViewControler.m in Sources */,
 				B3947DD81AB2D9D900777629 /* VZIntarnalPanView.m in Sources */,
 				B3FD8AF91990E6EF006E87DA /* VZViewController.m in Sources */,
-				B3947DD91AB2D9D900777629 /* VZPanManager.m in Sources */,
+				B3947DD91AB2D9D900777629 /* VZPanViewController.m in Sources */,
+				B38B33771BD402A000F9C8C8 /* VZPassTouchView.m in Sources */,
 				B3FD8AF31990E6EF006E87DA /* VZAppDelegate.m in Sources */,
 				B3FD8AEF1990E6EF006E87DA /* main.m in Sources */,
 			);
@@ -408,6 +408,7 @@
 				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
 				INFOPLIST_FILE = "VZViewController/VZViewController-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,6 +422,7 @@
 				GCC_PREFIX_HEADER = "VZViewController/VZViewController-Prefix.pch";
 				INFOPLIST_FILE = "VZViewController/VZViewController-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
