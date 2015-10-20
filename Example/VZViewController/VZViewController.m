@@ -27,7 +27,7 @@
 	VZPanViewController *panVC = [[VZPanViewController alloc] initWithPannigController:nav];
     panVC.panView = pan;
     panVC.panViewOffsetY = 70;
-
+	panVC.panBackgroundColor = [UIColor yellowColor];
 
     
 	[self addChildViewController:panVC];

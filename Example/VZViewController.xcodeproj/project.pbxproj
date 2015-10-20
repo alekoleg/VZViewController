@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B38B33771BD402A000F9C8C8 /* VZPassTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */; settings = {ASSET_TAGS = (); }; };
+		B38B337C1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = B38B337B1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.m */; settings = {ASSET_TAGS = (); }; };
 		B3947DD81AB2D9D900777629 /* VZIntarnalPanView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD41AB2D9D900777629 /* VZIntarnalPanView.m */; };
 		B3947DD91AB2D9D900777629 /* VZPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3947DD61AB2D9D900777629 /* VZPanViewController.m */; };
 		B3FD8AE31990E6EE006E87DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FD8AE21990E6EE006E87DA /* Foundation.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		B38B33751BD402A000F9C8C8 /* VZPassTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPassTouchView.h; sourceTree = "<group>"; };
 		B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPassTouchView.m; sourceTree = "<group>"; };
+		B38B337A1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZScrollViewPassTouch.h; sourceTree = "<group>"; };
+		B38B337B1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZScrollViewPassTouch.m; sourceTree = "<group>"; };
 		B3947DD31AB2D9D900777629 /* VZIntarnalPanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZIntarnalPanView.h; sourceTree = "<group>"; };
 		B3947DD41AB2D9D900777629 /* VZIntarnalPanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZIntarnalPanView.m; sourceTree = "<group>"; };
 		B3947DD51AB2D9D900777629 /* VZPanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPanViewController.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				B3947DD61AB2D9D900777629 /* VZPanViewController.m */,
 				B38B33751BD402A000F9C8C8 /* VZPassTouchView.h */,
 				B38B33761BD402A000F9C8C8 /* VZPassTouchView.m */,
+				B38B337A1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.h */,
+				B38B337B1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -279,6 +284,7 @@
 				B3947DD91AB2D9D900777629 /* VZPanViewController.m in Sources */,
 				B38B33771BD402A000F9C8C8 /* VZPassTouchView.m in Sources */,
 				B3FD8AF31990E6EF006E87DA /* VZAppDelegate.m in Sources */,
+				B38B337C1BD6C9F200F9C8C8 /* VZScrollViewPassTouch.m in Sources */,
 				B3FD8AEF1990E6EF006E87DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

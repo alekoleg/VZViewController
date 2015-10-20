@@ -13,6 +13,7 @@
 - (instancetype)initWithPannigController:(UIViewController *)viewController;
 
 @property (nonatomic, strong) UIView *panView;
+@property (nonatomic, strong) UIColor *panBackgroundColor;
 @property (nonatomic, strong, readonly) UIViewController *panningViewController;
 @property (nonatomic) CGFloat panViewOffsetY;
 

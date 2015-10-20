@@ -9,6 +9,7 @@
 #import "VZPanViewController.h"
 #import "VZIntarnalPanView.h"
 #import "VZPassTouchView.h"
+#import "VZScrollViewPassTouch.h"
 
 
 @interface VZPanViewController () <UIScrollViewDelegate> {
@@ -16,7 +17,7 @@
 }
 
 @property (nonatomic, assign) BOOL panningVCVisible;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) VZScrollViewPassTouch *scrollView;
 @property (nonatomic, strong) VZIntarnalPanView *internalPanView;
 
 @end
@@ -43,18 +44,14 @@
 	[super viewDidLoad];
 	[self setupScrollView];
 	[self setupPanView];
-	[self setupPanningViewController];
-
-	self.view.backgroundColor = [UIColor yellowColor];
-	self.scrollView.backgroundColor = [UIColor blueColor];
-	
+	[self setupPanningViewController];	
 }
 
 #pragma mark - Setup -
 
 - (void)setupScrollView {
     if (!self.scrollView) {
-        self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        self.scrollView = [[VZScrollViewPassTouch alloc] initWithFrame:self.view.bounds];
         self.scrollView.backgroundColor = [UIColor clearColor];
 		self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.scrollView.delegate = self;
@@ -65,8 +62,8 @@
 }
 
 - (void)setupPanView {
-    if (!self.internalPanView && self.panView) {
-        self.internalPanView = [[VZIntarnalPanView alloc] initWithFrame:self.panView.bounds];
+    if (!self.internalPanView) {
+        self.internalPanView = [[VZIntarnalPanView alloc] init];
         self.internalPanView.scrollView = self.scrollView;
         [self.internalPanView  addSubview:self.panView];
         [self.scrollView addSubview:self.internalPanView];
@@ -81,6 +78,25 @@
 
 	[self addChildViewController:self.panningViewController];
 	[self.scrollView addSubview:self.panningViewController.view];
+}
+
+- (void)setPanView:(UIView *)panView
+{
+	_panView = panView;
+	[self.internalPanView addSubview:panView];
+	[self.view setNeedsLayout];
+}
+
+- (void)setPanViewOffsetY:(CGFloat)panViewOffsetY
+{
+	_panViewOffsetY = panViewOffsetY;
+	[self.view setNeedsLayout];
+}
+
+- (void)setPanBackgroundColor:(UIColor *)panBackgroundColor
+{
+	_panBackgroundColor = panBackgroundColor;
+	self.internalPanView.backgroundColor = panBackgroundColor;
 }
 
 #pragma mark - UIScrollViewDelegate -
@@ -122,10 +138,19 @@
 		frame;
 	});
 
+	self.panView.frame = ({
+		CGRect frame = self.panView.frame;
+		frame.origin = CGPointZero;
+		frame;
+	});
+
 	self.internalPanView.frame = ({
 		CGRect frame = self.internalPanView.frame;
-		frame.origin.x = self.scrollView.frame.size.width - frame.size.width;
+		frame.origin.x = self.scrollView.frame.size.width - self.panView.frame.size.width;
 		frame.origin.y = self.panViewOffsetY;
+		frame.size.height = self.panView.frame.size.height;
+		CGFloat additionWidth = (self.scrollView.frame.size.width - [self maxWidth]) / 2.0;
+		frame.size.width = self.panView.frame.size.width + additionWidth;
 		frame;
 	});
 

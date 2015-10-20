@@ -16,8 +16,22 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAF-Tv-Iky">
+                                <rect key="frame" x="136" y="268" width="51" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="0ed-di-aoY"/>
+                                    <constraint firstAttribute="width" constant="49" id="i7a-Ih-pOW"/>
+                                </constraints>
+                            </switch>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.65490196079999996" green="0.72941176470000002" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XAF-Tv-Iky" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="O6O-K8-a9L"/>
+                            <constraint firstItem="XAF-Tv-Iky" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="oI0-4H-73w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
