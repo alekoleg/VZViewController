@@ -34,6 +34,15 @@
 	[self.view addSubview:panVC.view];
 	panVC.view.frame = self.view.bounds;
 	panVC.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[panVC setShow:YES animated:YES];
+
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[panVC setShow:NO animated:YES];
+
+		});
+	});
 }
 
 - (void)didReceiveMemoryWarning

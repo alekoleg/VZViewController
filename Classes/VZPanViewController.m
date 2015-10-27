@@ -123,6 +123,12 @@
 
 #pragma mark - Actions -
 
+- (void)setShow:(BOOL)show animated:(BOOL)animated
+{
+	CGFloat x = show ? self.scrollView.frame.size.width : 0.0;
+	[self.scrollView setContentOffset:CGPointMake(x, 0.0) animated:animated];
+}
+
 - (void)viewDidLayoutSubviews
 {
 	[super viewDidLayoutSubviews];

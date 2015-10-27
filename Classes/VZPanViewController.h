@@ -17,4 +17,6 @@
 @property (nonatomic, strong, readonly) UIViewController *panningViewController;
 @property (nonatomic) CGFloat panViewOffsetY;
 
+- (void)setShow:(BOOL)show animated:(BOOL)animated;
+
 @end
