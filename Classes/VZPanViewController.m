@@ -58,6 +58,9 @@
         self.scrollView.scrollEnabled = NO;
         self.scrollView.pagingEnabled = YES;
         [self.view addSubview:self.scrollView];
+
+		UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedPan:)];
+		[self.scrollView addGestureRecognizer:tap];
     }
 }
 
@@ -67,11 +70,7 @@
         self.internalPanView.scrollView = self.scrollView;
         [self.internalPanView  addSubview:self.panView];
         [self.scrollView addSubview:self.internalPanView];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedPan:)];
-        [self.internalPanView addGestureRecognizer:tap];
      }
-    
 }
 
 - (void)setupPanningViewController {
@@ -106,6 +105,7 @@
 	self.panningVCVisible = scrollView.contentOffset.x >= scrollView.frame.size.width / 2.0;
     [self updateBackColorAlpha];
     [self updateReEnable];
+	[self updateInternalPanVisabilityAnimated:YES];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -172,8 +172,11 @@
 }
 
 - (void)tapedPan:(UITapGestureRecognizer *)tap {
-    if (tap.state == UIGestureRecognizerStateRecognized) {
-        [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width, 0) animated:YES];
+	CGPoint location = [tap locationInView:self.scrollView];
+    if (tap.state == UIGestureRecognizerStateRecognized &&
+		CGRectContainsPoint(self.internalPanView.frame, location))
+	{
+		[self setShow:YES animated:YES];
     }
 }
 
@@ -184,11 +187,28 @@
     }
 }
 
+- (void)updateInternalPanVisabilityAnimated:(BOOL)animated
+{
+	void(^doBlock)(void) = ^ {
+		CGFloat offset = (self.scrollView.frame.size.width - [self maxWidth]);
+		self.internalPanView.alpha = fabs(self.scrollView.contentOffset.x) < offset ? 1.0 : 0.0;
+	};
+
+	if (animated) {
+		[UIView animateWithDuration:0.3 animations:doBlock];
+	}
+	else
+	{
+		doBlock();
+	}
+}
+
 - (void)reEnable {
     self.scrollView.alpha = 0.0;
     self.scrollView.contentOffset = CGPointZero;
     [UIView animateWithDuration:0.3 delay:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.scrollView.alpha = 1.0;
+		[self updateInternalPanVisabilityAnimated:NO];
     } completion:NULL];
 }
 
