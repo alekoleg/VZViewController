@@ -57,6 +57,8 @@
         self.scrollView.delegate = self;
         self.scrollView.scrollEnabled = NO;
         self.scrollView.pagingEnabled = YES;
+		self.scrollView.showsHorizontalScrollIndicator = NO;
+		self.scrollView.showsVerticalScrollIndicator = NO;
         [self.view addSubview:self.scrollView];
 
 		UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedPan:)];

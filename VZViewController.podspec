@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "VZViewController"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "ViewController"
   s.description  = "Present right pannig view controller"
   s.homepage     = "https://github.com/alekoleg/VZViewController"
